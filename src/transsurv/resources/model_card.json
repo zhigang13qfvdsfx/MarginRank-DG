@@ -1,0 +1,100 @@
+{
+  "model_name": "TransSurv-PDAC MarginRank-DG",
+  "package_version": "0.5.0",
+  "model_version": "4.0.0-marginrank-locked",
+  "release_status": "research beta",
+  "model_sha256": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+  "intended_population": "Previously untreated primary or resectable pancreatic ductal adenocarcinoma represented by bulk tumor transcriptomes.",
+  "intended_output": "A continuous, composition-invariant transcriptomic relative-risk score. Batch-relative z scores, percentiles and tertiles are secondary outputs available only when at least 40 samples are scored together.",
+  "not_intended_for": [
+    "absolute survival probability or individual survival-time prediction",
+    "clinical diagnosis, prognosis, treatment selection or medical-device use",
+    "treated metastatic PDAC",
+    "prospective patient management",
+    "use as a fixed clinical high/low threshold"
+  ],
+  "algorithm": {
+    "name": "MarginRank-DG",
+    "description": "Continuous within-sample ranks are centered on the median rank of six locked anchor genes. Forty locked gene margins are passed to a pooled ridge Cox model selected by balanced leave-one-domain-out evaluation.",
+    "selected_genes": 40,
+    "anchor_genes": ["ACTB", "B2M", "GAPDH", "GUSB", "RPLP0", "TBP"],
+    "rank_reference_genes": 11681,
+    "uses_other_samples_for_raw_risk": false,
+    "uses_outcomes_at_inference": false,
+    "absolute_survival_enabled": false
+  },
+  "development": {
+    "primary_domains": 10,
+    "primary_samples": 1181,
+    "primary_events": 768,
+    "auxiliary_metastatic_samples": 70,
+    "auxiliary_metastatic_events": 53,
+    "balanced_leave_one-domain-out_mean_uno_c": 0.629509,
+    "balanced_leave_one-domain-out_worst_uno_c": 0.597308
+  },
+  "independent_validation": {
+    "cohort": "ICGC PACA-CA",
+    "samples": 168,
+    "events": 136,
+    "harrell_c": 0.605421,
+    "uno_c_36_months": 0.608523,
+    "uno_c_bootstrap_95_ci": [0.556620, 0.661418],
+    "hazard_ratio_per_sd": 1.333964,
+    "hazard_ratio_95_ci": [1.122949, 1.584631],
+    "adjusted_hazard_ratio_per_sd": 1.266717,
+    "adjusted_hazard_ratio_95_ci": [1.065310, 1.506202],
+    "combined_model_uno_c": 0.619613,
+    "combined_minus_cross_fitted_clinical_uno_c": 0.058220,
+    "v4_minus_v2_uno_c": 0.014166,
+    "bootstrap_probability_v4_better_than_v2": 0.7145,
+    "interpretation": "The frozen model passed the prespecified independent external gate, but superiority over the frozen v2 predecessor was not statistically secure."
+  },
+  "stress_tests": [
+    {
+      "cohort": "GSE77435 extreme-survival series",
+      "samples": 24,
+      "endpoint": "short (<10 months) versus long (>20 months) survival",
+      "auc": 0.65035,
+      "permutation_p": 0.1116,
+      "interpretation": "Directionally supportive but underpowered and not statistically significant."
+    },
+    {
+      "cohort": "PRINCE treated metastatic PDAC",
+      "samples": 63,
+      "events": 15,
+      "uno_c_18_months": 0.33803,
+      "hazard_ratio_per_sd": 0.44743,
+      "interpretation": "Strong direction reversal; this is a boundary failure and excludes treated metastatic PDAC from intended use."
+    }
+  ],
+  "biological_context": {
+    "single_cell_dataset": "GSE263733",
+    "selected_genes_detected": "40/40",
+    "cell_type_heterogeneity_p": 1.06e-10,
+    "ductal_basal_classical_alignment_spearman_rho": 0.5773,
+    "ductal_basal_classical_alignment_p": 0.000837,
+    "paired_liver_metastasis_test": "failed; median change -0.01015, one-sided p=0.9219",
+    "ranked_context": "Adverse cross-domain genes emphasized cell-cycle and DNA-synthesis programs; favorable genes emphasized oxidative and pancreatic metabolic programs. These results are contextual and do not establish mechanism or causality."
+  },
+  "minimum_input_requirements": {
+    "reference_gene_coverage": 0.80,
+    "selected_gene_coverage": 0.80,
+    "anchor_gene_coverage": 0.50,
+    "batch_size_for_relative_percentiles": 40,
+    "gene_identifier": "HGNC gene symbols"
+  },
+  "known_limitations": [
+    "Retrospective public cohorts and heterogeneous treatment annotation.",
+    "No prospective clinical validation and no wet-laboratory validation.",
+    "Independent discrimination is moderate rather than diagnostic-grade.",
+    "Absolute calibration was not transportable and was deliberately removed.",
+    "The raw score is sample-composition invariant, while percentiles and tertiles are cohort relative.",
+    "Low reference coverage changes the empirical rank scale and invalidates confirmatory interpretation."
+  ],
+  "governance": {
+    "paca_ca_tuned_after_scoring": false,
+    "gse77435_tuned_after_scoring": false,
+    "prince_tuned_after_scoring": false,
+    "failed_external_tests_retained": true
+  }
+}

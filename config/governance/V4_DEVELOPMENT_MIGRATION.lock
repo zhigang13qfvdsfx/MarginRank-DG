@@ -1,0 +1,43 @@
+{
+  "status": "LOCKED_BEFORE_V4_MODEL_DEVELOPMENT",
+  "locked_local_date": "2026-07-22",
+  "reason": "The frozen v3.3 ranker failed its one-time fresh GSE224564 UMD-2/UMD-3 confirmation. A new model generation must be developed without reusing that confirmation set.",
+  "primary_development_domains": [
+    "TCGA_PAAD",
+    "CPTAC_PDACC",
+    "GSE62452",
+    "GSE85916",
+    "E-MTAB-6134",
+    "GSE183795",
+    "GSE57495",
+    "GSE79668",
+    "PACA-AU",
+    "GSE71729"
+  ],
+  "role_migrations": {
+    "GSE57495": "v1 external set consumed on 2026-07-22; migrated to v4 development and permanently loses external-validation status for v4",
+    "GSE79668": "v1 external set consumed on 2026-07-22; migrated to v4 development and permanently loses external-validation status for v4",
+    "PACA-AU": "v2 confirmation set consumed on 2026-07-22; migrated to v4 development and permanently loses external-validation status for v4",
+    "GSE71729": "v2 confirmation set consumed on 2026-07-22; migrated to v4 development and permanently loses external-validation status for v4"
+  },
+  "auxiliary_development_domain": {
+    "GSE205154_metastatic": "public PRECOG-mapped metastatic specimens with OS; may be used only as a separately labelled cross-context auxiliary domain and may not be called primary-tumour evidence"
+  },
+  "permanently_excluded_from_tuning": [
+    "GSE224564 UMD-2",
+    "GSE224564 UMD-3"
+  ],
+  "exclusion_reason": "These samples are the consumed one-time v3.3 confirmation and the completion lock prohibits reuse for tuning.",
+  "endpoint_rule": "All feature screening, preprocessing, hyperparameter selection, ensemble weighting, and stopping decisions use development domains only. Outer-domain outcomes are unavailable to the corresponding inner selection step.",
+  "v4_primary_gate": {
+    "mean_uno_c": 0.60,
+    "median_uno_c": 0.60,
+    "minimum_uno_c": 0.54,
+    "minimum_positive_domains_of_10": 8,
+    "catastrophic_domain_floor": 0.48,
+    "required_mean_uno_gain_over_locked_v2_on_same_domains": 0.01,
+    "required_pair_or_feature_selection_stability": 0.40
+  },
+  "failure_rule": "A candidate failing the primary gate cannot be frozen for fresh validation. Further development-only redesign is allowed, but every attempted family and result must be retained.",
+  "absolute_survival_policy": "No absolute-survival output will be redeveloped in v4. The target remains relative risk and within-batch percentile because the calibration stop rule is permanent for this project generation."
+}

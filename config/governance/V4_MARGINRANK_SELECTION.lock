@@ -1,0 +1,41 @@
+{
+  "status": "LOCKED_AFTER_DYNAMIC_NESTED_GATE_PASS_BEFORE_FIXED_CONFIGURATION_SELECTION",
+  "locked_local_date": "2026-07-22",
+  "dynamic_nested_result": "results/36_v4_marginrank_gate.json",
+  "dynamic_nested_gate": "PASS",
+  "algorithm": "MarginRank-DG: continuous single-sample gene-rank margins, balanced cross-domain censoring-aware screening, source-drift penalty, endpoint-use cap for margin diversity, and pooled ridge or domain-expert ensemble candidates",
+  "fixed_configuration_selection": {
+    "procedure": "Evaluate every previously enumerated candidate in leave-one-primary-domain-out development. Select by mean Uno + 0.5*(worst Uno-0.5) - 0.25*SD Uno; ties resolve by mean Uno then lexical candidate name.",
+    "new_candidates_allowed": false,
+    "auxiliary_role": "GSE205154 metastatic is included only for candidates whose locked name ends in __aux",
+    "primary_domains": 10
+  },
+  "fixed_configuration_gate": {
+    "mean_uno_c": 0.61,
+    "median_uno_c": 0.60,
+    "minimum_uno_c": 0.54,
+    "minimum_positive_domains": 9,
+    "mean_uno_gain_over_locked_v2": 0.005,
+    "leave_one_domain_feature_jaccard": 0.40
+  },
+  "missingness_gate": {
+    "replicates_per_level": 200,
+    "seed": 440036,
+    "levels": [0.05, 0.10, 0.20],
+    "masking_unit": "entire selected input genes in each held-out domain; training data and outcome labels unchanged",
+    "imputation": "training-centred feature value implemented by the locked learner; no outcome-aware imputation",
+    "requirements": {
+      "0.05": {"minimum_mean_risk_correlation": 0.95, "maximum_mean_uno_drop": 0.02},
+      "0.10": {"minimum_mean_risk_correlation": 0.90, "maximum_mean_uno_drop": 0.03},
+      "0.20": {"minimum_mean_risk_correlation": 0.80, "maximum_mean_uno_drop": 0.05}
+    }
+  },
+  "continuity_gate": "Every held-out domain with n>=40 must have at least min(20, ceil(n/3)) distinct predicted risks before masking.",
+  "fresh_validation_rule": "Only if fixed selection, missingness, and continuity gates all pass may the final configuration be fitted to development, frozen, and used once on reserved fresh candidates.",
+  "prohibitions": [
+    "no GSE224564 reuse",
+    "no PRINCE or GSE77435 score before freeze",
+    "no absolute-survival output",
+    "no threshold changes after the missingness results"
+  ]
+}

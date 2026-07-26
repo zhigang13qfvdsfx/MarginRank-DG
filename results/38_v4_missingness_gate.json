@@ -1,0 +1,104 @@
+{
+  "status": "V4_MISSINGNESS_STRESS_COMPLETE",
+  "gate": "PASS",
+  "conditions": {
+    "0.05_correlation": true,
+    "0.05_uno_drop": true,
+    "0.10_correlation": true,
+    "0.10_uno_drop": true,
+    "0.20_correlation": true,
+    "0.20_uno_drop": true
+  },
+  "selected_candidate": "anchor_g40_p0__pooled_ridge_a1__aux",
+  "replicates_per_level": 200,
+  "levels": [
+    {
+      "level": 0.05,
+      "mean_risk_correlation": 0.9887120838397828,
+      "minimum_cohort_mean_correlation": 0.9839280464770046,
+      "mean_uno_drop": 0.0017379703570480935,
+      "maximum_cohort_mean_uno_drop": 0.005270041301313787,
+      "q95_uno_drop": 0.017232440459647013
+    },
+    {
+      "level": 0.1,
+      "mean_risk_correlation": 0.979673241584354,
+      "minimum_cohort_mean_correlation": 0.966046933855312,
+      "mean_uno_drop": 0.0029038892336469896,
+      "maximum_cohort_mean_uno_drop": 0.00753102772463617,
+      "q95_uno_drop": 0.02138667903080888
+    },
+    {
+      "level": 0.2,
+      "mean_risk_correlation": 0.9552772952287346,
+      "minimum_cohort_mean_correlation": 0.9292089564271244,
+      "mean_uno_drop": 0.006494745491966316,
+      "maximum_cohort_mean_uno_drop": 0.014494319550849353,
+      "q95_uno_drop": 0.03347396667275984
+    }
+  ],
+  "worst_single_missing_genes": [
+    {
+      "missing_gene": "NR3C2",
+      "mean_risk_correlation": 0.9955466903874026,
+      "mean_uno_drop": 0.009857472510616416,
+      "maximum_uno_drop": 0.009857472510616416
+    },
+    {
+      "missing_gene": "JTB",
+      "mean_risk_correlation": 0.9902491273974803,
+      "mean_uno_drop": 0.008876256671594196,
+      "maximum_uno_drop": 0.008876256671594196
+    },
+    {
+      "missing_gene": "RALGPS1",
+      "mean_risk_correlation": 0.9852693417172419,
+      "mean_uno_drop": 0.00848885601636061,
+      "maximum_uno_drop": 0.014758988182143384
+    },
+    {
+      "missing_gene": "MIA3",
+      "mean_risk_correlation": 0.9801332659208152,
+      "mean_uno_drop": 0.007276507434274415,
+      "maximum_uno_drop": 0.022355965565966085
+    },
+    {
+      "missing_gene": "PRELP",
+      "mean_risk_correlation": 0.9864167663655594,
+      "mean_uno_drop": 0.00541933171036056,
+      "maximum_uno_drop": 0.01406369240330696
+    },
+    {
+      "missing_gene": "TRIM2",
+      "mean_risk_correlation": 0.9975272527236813,
+      "mean_uno_drop": 0.004882455438695477,
+      "maximum_uno_drop": 0.004882455438695477
+    },
+    {
+      "missing_gene": "NPDC1",
+      "mean_risk_correlation": 0.9950613810930796,
+      "mean_uno_drop": 0.00463347097534228,
+      "maximum_uno_drop": 0.011135631343650032
+    },
+    {
+      "missing_gene": "FBLN5",
+      "mean_risk_correlation": 0.9917362851836977,
+      "mean_uno_drop": 0.004433074727605846,
+      "maximum_uno_drop": 0.00813193318322547
+    },
+    {
+      "missing_gene": "CD58",
+      "mean_risk_correlation": 0.9969892921968725,
+      "mean_uno_drop": 0.004333407629276365,
+      "maximum_uno_drop": 0.004333407629276365
+    },
+    {
+      "missing_gene": "CD109",
+      "mean_risk_correlation": 0.9998679723288509,
+      "mean_uno_drop": 0.003932637416265372,
+      "maximum_uno_drop": 0.003932637416265372
+    }
+  ],
+  "gse224564_used": false,
+  "fresh_candidate_scores_generated": false
+}

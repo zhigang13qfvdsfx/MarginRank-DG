@@ -1,0 +1,42 @@
+{
+  "status": "SOFTWARE_RELEASE_GATE_COMPLETE",
+  "overall_gate": "PASS",
+  "conditions": {
+    "all_tests_pass": true,
+    "test_coverage_at_least_80_percent": true,
+    "wheel_contains_frozen_model": true,
+    "wheel_contains_model_card": true,
+    "model_hash_matches_card": true,
+    "clean_cli_scores_all_samples": true,
+    "clean_cli_emits_batch_relative_outputs": true,
+    "clean_cli_has_no_degraded_inputs": true,
+    "clean_cli_has_no_reference_warnings": true,
+    "absolute_survival_is_disabled": true
+  },
+  "package": "transsurv-pdac",
+  "package_version": "0.5.0",
+  "model_version": "4.0.0-marginrank-locked",
+  "tests": {
+    "collected": 28,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "line_coverage": 0.8298
+  },
+  "clean_install_smoke": {
+    "samples": 40,
+    "degraded": 0,
+    "reference_warnings": 0,
+    "relative_outputs_available": true,
+    "absolute_survival_columns": []
+  },
+  "hashes": {
+    "wheel": "9ffc42f296e35aa84c62b2d004931a2a30eb6d8c8f4e732d7d1af2ea207c1a6c",
+    "packaged_model": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+    "model_card": "0c905167c420efe200622624bed62186af23a842036f1cf2c247c30bc49a773e",
+    "readme": "b02e9925c8e2d3030609b8c1f75260aeda1ff87e47dd352543a85fd0098779e5"
+  },
+  "release_boundary": "Previously untreated primary or resectable pancreatic ductal adenocarcinoma represented by bulk tumor transcriptomes.",
+  "negative_stress_test_retained": true,
+  "interpretation": "The frozen model is installable and reproducible as a research package. This engineering gate does not imply clinical validity or guarantee journal acceptance."
+}

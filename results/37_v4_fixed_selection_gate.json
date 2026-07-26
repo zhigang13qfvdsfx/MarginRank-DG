@@ -1,0 +1,24 @@
+{
+  "status": "V4_FIXED_CONFIGURATION_SELECTION_COMPLETE",
+  "gate": "PASS",
+  "conditions": {
+    "mean_uno": true,
+    "median_uno": true,
+    "minimum_uno": true,
+    "positive_domains": true,
+    "mean_gain_over_v2": true,
+    "feature_jaccard": true,
+    "risk_continuity": true
+  },
+  "selected_candidate": "anchor_g40_p0__pooled_ridge_a1__aux",
+  "mean_harrell_c": 0.6329700597013719,
+  "mean_uno_c": 0.6295093065587518,
+  "median_uno_c": 0.6277814080020472,
+  "minimum_uno_c": 0.5973077692843046,
+  "positive_domains": 10,
+  "mean_uno_gain_over_v2": 0.019767634151150203,
+  "leave_one_domain_feature_jaccard": 0.6226342967840004,
+  "continuity_pass": true,
+  "gse224564_used": false,
+  "fresh_candidate_scores_generated": false
+}

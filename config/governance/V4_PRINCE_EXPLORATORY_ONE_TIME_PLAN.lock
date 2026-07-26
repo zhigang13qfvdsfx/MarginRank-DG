@@ -1,0 +1,40 @@
+{
+  "status": "LOCKED_BEFORE_FIRST_PRINCE_RISK_SCORE",
+  "date": "2026-07-22",
+  "cohort": "PRINCE pretreatment metastatic pancreatic adenocarcinoma",
+  "role": "underpowered exploratory transportability stress test",
+  "n": 63,
+  "events": 15,
+  "primary_predictor": "continuous frozen v4 raw relative-risk score",
+  "primary_metrics": [
+    "Harrell concordance",
+    "Uno concordance truncated at 18 months",
+    "unadjusted hazard ratio per risk SD"
+  ],
+  "adjusted_sensitivity": "ridge-penalized Cox model with age, sex, and stage IV; exploratory only",
+  "comparators": ["frozen v2 predecessor", "legacy six-gene score"],
+  "uno_tau_months": 18.0,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 480048,
+  "exploratory_supportive_gate": {
+    "minimum_harrell_c": 0.58,
+    "minimum_uno_c": 0.58,
+    "minimum_hr_per_sd": 1.20,
+    "minimum_hr_ci_low": 0.80,
+    "minimum_bootstrap_harrell_lower_95": 0.50
+  },
+  "model_sha256": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+  "v2_model_sha256": "273a1794f82ad046e083124a72210ae703df59d36ba9c9cb6c2e039fec01d183",
+  "eligibility_sha256": "fd986dcb4abc803f833faf07c1b4c738f1c5ffef8571ef011e864b127b4a75f4",
+  "expression_sha256": "4a53e67c13f6aec9d8ae476c8ff020c0cb8c3cb30f28695caa72d09c2f4b0d7f",
+  "clinical_sha256": "ddf7c34232925f7d8a4666d88b6a5ed64580547b877ea6ad67c4c3e36b475834",
+  "analysis_script_sha256": "315faaf1058edeb24fa37baf9b95ced0c0c02f3e6d25b3bddbb1e10f8c9def52",
+  "forbidden": [
+    "model refitting, reselection, coefficient changes, endpoint changes, or sample exclusion after scoring",
+    "calling PRINCE event-qualified primary validation",
+    "using PRINCE results to tune v4",
+    "absolute survival, calibration, treatment-benefit, or clinical-utility claims",
+    "suppressing a null or reversed result"
+  ],
+  "reporting_rule": "Report the 15-event limitation, all confidence intervals, comparator and subgroup results, and preserve the one-time completion lock regardless of outcome."
+}

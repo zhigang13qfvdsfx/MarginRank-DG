@@ -1,0 +1,117 @@
+{
+  "status": "GSE77435_EXTREME_SURVIVAL_VALIDATED_EXACTLY_ONCE",
+  "external_validation_gate": "AMBER_OR_RED_EXTREME_PHENOTYPE_RESULT",
+  "validation_conditions": {
+    "auc": false,
+    "bootstrap_auc_lower": false,
+    "permutation_p": false,
+    "odds_ratio_ci_lower": false,
+    "correct_median_direction": true,
+    "minimum_balanced_accuracy": false,
+    "continuous_scores": true,
+    "coverage": true
+  },
+  "additional_evidence_gate": "FAIL",
+  "additional_evidence_conditions": {
+    "validation_gate_green": false,
+    "auc_gain_over_v2": true,
+    "bootstrap_probability_v4_gt_v2": false,
+    "auc_gain_over_legacy": false,
+    "bootstrap_probability_v4_gt_legacy": false
+  },
+  "cohort": "GSE77435",
+  "n": 24,
+  "short_survivors_lt10m": 13,
+  "long_survivors_gt20m": 11,
+  "primary": {
+    "auc": 0.6503496503496503,
+    "rank_biserial": 0.3006993006993006,
+    "mann_whitney_one_sided_p": 0.11421296207270094,
+    "median_short": 0.565155536207399,
+    "median_long": 0.49809768605108,
+    "median_difference_short_minus_long": 0.06705785015631899,
+    "median_split_threshold": 0.5007709033656567,
+    "median_split_balanced_accuracy": 0.5419580419580419,
+    "or_per_sd": 2.0987648970327597,
+    "or_ci_low": 0.7940107956137697,
+    "or_ci_high": 5.547549375083765,
+    "or_p": 0.13494310481430472
+  },
+  "comparators": {
+    "v4_marginrank": {
+      "auc": 0.6503496503496503,
+      "rank_biserial": 0.3006993006993006,
+      "mann_whitney_one_sided_p": 0.11421296207270094,
+      "median_short": 0.565155536207399,
+      "median_long": 0.49809768605108,
+      "median_difference_short_minus_long": 0.06705785015631899,
+      "median_split_threshold": 0.5007709033656567,
+      "median_split_balanced_accuracy": 0.5419580419580419,
+      "or_per_sd": 2.0987648970327597,
+      "or_ci_low": 0.7940107956137697,
+      "or_ci_high": 5.547549375083765,
+      "or_p": 0.13494310481430472
+    },
+    "v2_predecessor": {
+      "auc": 0.6118881118881119,
+      "rank_biserial": 0.22377622377622375,
+      "mann_whitney_one_sided_p": 0.1959061656699293,
+      "median_short": 0.4529354840741053,
+      "median_long": -0.18047776340482005,
+      "median_difference_short_minus_long": 0.6334132474789254,
+      "median_split_threshold": 0.1362288603346426,
+      "median_split_balanced_accuracy": 0.5419580419580419,
+      "or_per_sd": 1.4731050160536094,
+      "or_ci_low": 0.6413366405103983,
+      "or_ci_high": 3.383618292251807,
+      "or_p": 0.3612276022865545
+    },
+    "legacy_six_gene": {
+      "auc": 0.6223776223776224,
+      "rank_biserial": 0.2447552447552448,
+      "mann_whitney_one_sided_p": 0.16556777173111809,
+      "median_short": -0.0008914470135225625,
+      "median_long": -0.006110459262087467,
+      "median_difference_short_minus_long": 0.005219012248564904,
+      "median_split_threshold": -0.0009584246840537033,
+      "median_split_balanced_accuracy": 0.5419580419580419,
+      "or_per_sd": 1.90194464087687,
+      "or_ci_low": 0.7339720358348044,
+      "or_ci_high": 4.928516674134457,
+      "or_p": 0.18572036996690122
+    }
+  },
+  "v4_auc_ci_95": [
+    0.41258741258741266,
+    0.8671328671328671
+  ],
+  "permutation_p": 0.11158884111588842,
+  "v4_auc_gain_over_v2": 0.038461538461538436,
+  "v4_vs_v2_delta_auc_ci_95": [
+    -0.17491258741258756,
+    0.2622377622377623
+  ],
+  "bootstrap_probability_v4_gt_v2": 0.639,
+  "v4_auc_gain_over_legacy": 0.027972027972027913,
+  "v4_vs_legacy_delta_auc_ci_95": [
+    -0.2447552447552448,
+    0.29370629370629375
+  ],
+  "bootstrap_probability_v4_gt_legacy": 0.5876,
+  "legacy_gene_coverage": 0.8333333333333334,
+  "absolute_survival_values_emitted": false,
+  "time_to_event_claimed": false,
+  "calibration_claimed": false,
+  "clinical_utility_claimed": false,
+  "model_changed": false,
+  "paca_ca_used_for_tuning": false,
+  "interpretation": "Independent small-cohort validation of a prespecified extreme-survival binary phenotype; not representative time-to-event validation and not suitable for calibration or clinical-decision claims.",
+  "hashes": {
+    "model_sha256": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+    "v2_model_sha256": "273a1794f82ad046e083124a72210ae703df59d36ba9c9cb6c2e039fec01d183",
+    "expression_sha256": "9acba588a579c2075ee6b8db81380fb4c6d7621339467c547a2d4442e10a6c99",
+    "clinical_sha256": "69fa18c465a33cb5be4292aa530f16827cb2e156e76a6b1fff020347b5b98e01",
+    "correction_sha256": "a6a85a768cfc42f3905be44e4d8e7d071c9485c4137debbc4b62baeaab53f0c7",
+    "analysis_script_sha256": "bc8da1d811ca8e355e4a50303eca25c06b3994ec77c4acf42f8e2d075fa247c6"
+  }
+}

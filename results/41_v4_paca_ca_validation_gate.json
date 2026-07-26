@@ -1,0 +1,429 @@
+{
+  "status": "PACA_CA_VALIDATED_EXACTLY_ONCE_NO_RETUNING",
+  "external_validation_gate": "GREEN_INDEPENDENT_VALIDATION",
+  "external_gate_conditions": {
+    "Harrell C >= 0.60": true,
+    "Uno C at 36 months >= 0.60": true,
+    "unadjusted HR 95% CI lower > 1": true,
+    "adjusted HR 95% CI lower > 1": true,
+    "no clear reversal in a large prespecified subgroup": true
+  },
+  "computational_top_tier_readiness": "AMBER_ADDITIONAL_EVIDENCE_OR_REFRAMING_NEEDED",
+  "readiness_conditions": {
+    "fresh independent validation is green": true,
+    "bootstrap lower 95% bound for v4 Uno C >= 0.55": true,
+    "v4 Uno gain over frozen v2 predecessor >= 0.01": true,
+    "bootstrap probability v4 Uno > v2 Uno >= 0.80": false,
+    "combined Uno gain over cross-fitted clinical model >= 0.015": true,
+    "bootstrap probability combined Uno > clinical Uno >= 0.80": true
+  },
+  "cohort": "ICGC PACA-CA",
+  "n": 168,
+  "events": 136,
+  "primary": {
+    "model": "v4_risk",
+    "harrell_c": 0.6054209642600143,
+    "uno_c": 0.6085230394135893,
+    "n": 168,
+    "events": 136,
+    "log_hr_per_sd": 0.28815491347479294,
+    "log_hr_se": 0.08785538915664891,
+    "hr_per_sd": 1.3339639371066,
+    "hr_ci_low": 1.1229491011464485,
+    "hr_ci_high": 1.5846308471899961,
+    "hr_p": 0.0010385217181239363,
+    "ph_test_p": 0.15679712830727174
+  },
+  "adjusted": {
+    "n": 168,
+    "events": 136,
+    "hr_per_sd": 1.266717108644889,
+    "hr_ci_low": 1.0653103602553842,
+    "hr_ci_high": 1.506201660283307,
+    "hr_p": 0.007448430189249946,
+    "covariates": [
+      "age_per_10y",
+      "age_missing",
+      "male",
+      "stage_advanced",
+      "stage_missing",
+      "grade_poor",
+      "grade_missing"
+    ],
+    "penalizer": 0.01
+  },
+  "comparators": {
+    "v4_risk": {
+      "harrell_c": 0.6054209642600143,
+      "uno_c": 0.6085230394135893,
+      "n": 168,
+      "events": 136,
+      "log_hr_per_sd": 0.28815491347479294,
+      "log_hr_se": 0.08785538915664891,
+      "hr_per_sd": 1.3339639371066,
+      "hr_ci_low": 1.1229491011464485,
+      "hr_ci_high": 1.5846308471899961,
+      "hr_p": 0.0010385217181239363,
+      "ph_test_p": 0.15679712830727174
+    },
+    "v2_risk": {
+      "harrell_c": 0.5950667626129368,
+      "uno_c": 0.5943569540217882,
+      "n": 168,
+      "events": 136,
+      "log_hr_per_sd": 0.25569522614661255,
+      "log_hr_se": 0.08940839924069305,
+      "hr_per_sd": 1.2913590954706753,
+      "hr_ci_low": 1.083779819273707,
+      "hr_ci_high": 1.538696591132676,
+      "hr_p": 0.004238322294760526,
+      "ph_test_p": 0.20469184188512213
+    },
+    "legacy_risk": {
+      "harrell_c": 0.5688014711761413,
+      "uno_c": 0.5718326053870987,
+      "n": 168,
+      "events": 136,
+      "log_hr_per_sd": 0.061594981259471944,
+      "log_hr_se": 0.09047174795299875,
+      "hr_per_sd": 1.0635315072937097,
+      "hr_ci_low": 0.8907160005145437,
+      "hr_ci_high": 1.2698764436172958,
+      "hr_p": 0.4959853526295849,
+      "ph_test_p": 0.8728779705931766
+    },
+    "clinical_oof_risk": {
+      "harrell_c": 0.5520108739106101,
+      "uno_c": 0.5613931394417513,
+      "n": 168,
+      "events": 136,
+      "log_hr_per_sd": 0.33686452367856246,
+      "log_hr_se": 0.08005823203340012,
+      "hr_per_sd": 1.4005493096167716,
+      "hr_ci_low": 1.197157969316532,
+      "hr_ci_high": 1.6384958534652487,
+      "hr_p": 2.5793314246660698e-05,
+      "ph_test_p": 0.05105084282437638
+    },
+    "combined_oof_risk": {
+      "harrell_c": 0.6110178300151915,
+      "uno_c": 0.6196131565195051,
+      "n": 168,
+      "events": 136,
+      "log_hr_per_sd": 0.36828664131870337,
+      "log_hr_se": 0.09143801655466814,
+      "hr_per_sd": 1.445256249763376,
+      "hr_ci_low": 1.208123257753436,
+      "hr_ci_high": 1.728934207726668,
+      "hr_p": 5.632058640702719e-05,
+      "ph_test_p": 0.6059511174820562
+    }
+  },
+  "legacy_gene_coverage": 0.8333333333333334,
+  "tertile_analysis": {
+    "n_low": 55,
+    "n_high": 57,
+    "high_vs_low_logrank_p": 0.011947753301928146,
+    "high_vs_low_hr": 1.6999574075267487,
+    "high_vs_low_hr_ci_low": 1.118871464538102,
+    "high_vs_low_hr_ci_high": 2.5828303598734363
+  },
+  "time_dependent_auc": [
+    {
+      "model": "v4_risk",
+      "time_months": 12.0,
+      "auc": 0.6474636182013713
+    },
+    {
+      "model": "v4_risk",
+      "time_months": 24.0,
+      "auc": 0.6561591145762822
+    },
+    {
+      "model": "v4_risk",
+      "time_months": 36.0,
+      "auc": 0.6862161506657113
+    },
+    {
+      "model": "v2_risk",
+      "time_months": 12.0,
+      "auc": 0.6252553740451015
+    },
+    {
+      "model": "v2_risk",
+      "time_months": 24.0,
+      "auc": 0.6661568324355711
+    },
+    {
+      "model": "v2_risk",
+      "time_months": 36.0,
+      "auc": 0.642666002134153
+    },
+    {
+      "model": "legacy_risk",
+      "time_months": 12.0,
+      "auc": 0.61035185244784
+    },
+    {
+      "model": "legacy_risk",
+      "time_months": 24.0,
+      "auc": 0.6321332635910755
+    },
+    {
+      "model": "legacy_risk",
+      "time_months": 36.0,
+      "auc": 0.631844888370184
+    },
+    {
+      "model": "clinical_oof_risk",
+      "time_months": 12.0,
+      "auc": 0.5142582392194213
+    },
+    {
+      "model": "clinical_oof_risk",
+      "time_months": 24.0,
+      "auc": 0.5755160749529444
+    },
+    {
+      "model": "clinical_oof_risk",
+      "time_months": 36.0,
+      "auc": 0.6747601660074931
+    },
+    {
+      "model": "combined_oof_risk",
+      "time_months": 12.0,
+      "auc": 0.6037530591367026
+    },
+    {
+      "model": "combined_oof_risk",
+      "time_months": 24.0,
+      "auc": 0.665208144732971
+    },
+    {
+      "model": "combined_oof_risk",
+      "time_months": 36.0,
+      "auc": 0.760423880345892
+    }
+  ],
+  "subgroups": [
+    {
+      "subgroup": "age_lt65",
+      "n": 69,
+      "events": 54,
+      "harrell_c": 0.6155349291646312,
+      "uno_c": 0.6090294616670211,
+      "log_hr_per_sd": 0.27513365921787963,
+      "log_hr_se": 0.15053537488854407,
+      "hr_per_sd": 1.3167066530882328,
+      "hr_ci_low": 0.98028133149238,
+      "hr_ci_high": 1.7685906633021424,
+      "hr_p": 0.06759443399689778,
+      "ph_test_p": 0.08144312992918264
+    },
+    {
+      "subgroup": "age_ge65",
+      "n": 81,
+      "events": 64,
+      "harrell_c": 0.6012815948736205,
+      "uno_c": 0.6135888448015001,
+      "log_hr_per_sd": 0.34801344947766044,
+      "log_hr_se": 0.1236066703692222,
+      "hr_per_sd": 1.416251297452119,
+      "hr_ci_low": 1.1115377039775516,
+      "hr_ci_high": 1.8044981563444282,
+      "hr_p": 0.004870278373455277,
+      "ph_test_p": 0.8842093971515681
+    },
+    {
+      "subgroup": "female",
+      "n": 76,
+      "events": 61,
+      "harrell_c": 0.5931800158604282,
+      "uno_c": 0.589011667274562,
+      "log_hr_per_sd": 0.18722103948995814,
+      "log_hr_se": 0.1258919466397809,
+      "hr_per_sd": 1.2058938057448059,
+      "hr_ci_low": 0.9422099278178993,
+      "hr_ci_high": 1.5433714162845678,
+      "hr_p": 0.13697345523707016,
+      "ph_test_p": 0.1555025026430663
+    },
+    {
+      "subgroup": "male",
+      "n": 91,
+      "events": 74,
+      "harrell_c": 0.6116266375545851,
+      "uno_c": 0.6194760003009105,
+      "log_hr_per_sd": 0.3887417307919272,
+      "log_hr_se": 0.11916300977957794,
+      "hr_per_sd": 1.4751235231471163,
+      "hr_ci_low": 1.167870764700784,
+      "hr_ci_high": 1.86321078865217,
+      "hr_p": 0.0011052441252092904,
+      "ph_test_p": 0.5590202449551804
+    },
+    {
+      "subgroup": "stage_early_IA_IB_IIA",
+      "n": 26,
+      "events": 14,
+      "harrell_c": 0.634453781512605,
+      "uno_c": 0.6678662245381056,
+      "log_hr_per_sd": 0.37287061325409343,
+      "log_hr_se": 0.2826554365972951,
+      "hr_per_sd": 1.4518964715193594,
+      "hr_ci_low": 0.8343235164097192,
+      "hr_ci_high": 2.526601878707166,
+      "hr_p": 0.18711223687084255,
+      "ph_test_p": 0.1516039244075344
+    },
+    {
+      "subgroup": "stage_advanced_IIB_III_IV",
+      "n": 87,
+      "events": 73,
+      "harrell_c": 0.609624060150376,
+      "uno_c": 0.6179600632146222,
+      "log_hr_per_sd": 0.2950691538192108,
+      "log_hr_se": 0.12950437252873187,
+      "hr_per_sd": 1.3432192442153201,
+      "hr_ci_low": 1.042102788295106,
+      "hr_ci_high": 1.7313435471966574,
+      "hr_p": 0.0226998187831324,
+      "ph_test_p": 0.3000854818111014
+    },
+    {
+      "subgroup": "grade_well_or_moderate",
+      "n": 67,
+      "events": 49,
+      "harrell_c": 0.6256184716877405,
+      "uno_c": 0.6520150026371998,
+      "log_hr_per_sd": 0.3952846785140276,
+      "log_hr_se": 0.13241517450617157,
+      "hr_per_sd": 1.4848068233609648,
+      "hr_ci_low": 1.1453965815637395,
+      "hr_ci_high": 1.9247929827845343,
+      "hr_p": 0.0028340066628909375,
+      "ph_test_p": 0.6314520673398913
+    },
+    {
+      "subgroup": "grade_poor_or_undifferentiated",
+      "n": 47,
+      "events": 37,
+      "harrell_c": 0.6302083333333334,
+      "uno_c": 0.6199220954122378,
+      "log_hr_per_sd": 0.37257524427293015,
+      "log_hr_se": 0.1858041139839561,
+      "hr_per_sd": 1.451467689665359,
+      "hr_ci_low": 1.0084345529467904,
+      "hr_ci_high": 2.089137513174499,
+      "hr_p": 0.04494118990219809,
+      "ph_test_p": 0.16997280713881596
+    },
+    {
+      "subgroup": "specimen_laser_or_other",
+      "n": 149,
+      "events": 118,
+      "harrell_c": 0.5965744944283945,
+      "uno_c": 0.6058054796944442,
+      "log_hr_per_sd": 0.28343982317601374,
+      "log_hr_se": 0.09223875339434799,
+      "hr_per_sd": 1.3276889818037008,
+      "hr_ci_low": 1.1081055732727194,
+      "hr_ci_high": 1.5907852779737892,
+      "hr_p": 0.0021199445849392168,
+      "ph_test_p": 0.359572653749034
+    },
+    {
+      "subgroup": "specimen_solid_tissue",
+      "n": 19,
+      "events": 18,
+      "harrell_c": 0.7305389221556886,
+      "uno_c": 0.7000473512852406,
+      "log_hr_per_sd": 0.8945740295926121,
+      "log_hr_se": 0.2862504954481228,
+      "hr_per_sd": 2.446293518843039,
+      "hr_ci_low": 1.395877233025559,
+      "hr_ci_high": 4.287162107632056,
+      "hr_p": 0.0017771801463554672,
+      "ph_test_p": 0.0024147519845074275
+    },
+    {
+      "subgroup": "reads_lt5m",
+      "n": 82,
+      "events": 66,
+      "harrell_c": 0.586763253210405,
+      "uno_c": 0.6066792714279835,
+      "log_hr_per_sd": 0.2676378136493405,
+      "log_hr_se": 0.11284166643037351,
+      "hr_per_sd": 1.3068737224631117,
+      "hr_ci_low": 1.0475647109253823,
+      "hr_ci_high": 1.6303708101773247,
+      "hr_p": 0.017701691258369772,
+      "ph_test_p": 0.6279979163493749
+    },
+    {
+      "subgroup": "reads_ge5m",
+      "n": 84,
+      "events": 68,
+      "harrell_c": 0.6174518911745189,
+      "uno_c": 0.6075902027577149,
+      "log_hr_per_sd": 0.26752379135607357,
+      "log_hr_se": 0.13407802776115932,
+      "hr_per_sd": 1.3067247182193304,
+      "hr_ci_low": 1.0047420651156964,
+      "hr_ci_high": 1.6994704894820605,
+      "hr_p": 0.04601187507773625,
+      "ph_test_p": 0.11938720465510988
+    }
+  ],
+  "bootstrap": {
+    "valid_replicates": 2000,
+    "v4_risk_harrell_c_ci_low": 0.5534984267754681,
+    "v4_risk_harrell_c_ci_high": 0.6567270814332247,
+    "v4_risk_uno_c_ci_low": 0.5566197488199697,
+    "v4_risk_uno_c_ci_high": 0.6614180031768865,
+    "v2_risk_harrell_c_ci_low": 0.544861417917666,
+    "v2_risk_harrell_c_ci_high": 0.6447160008661099,
+    "v2_risk_uno_c_ci_low": 0.5452643140120058,
+    "v2_risk_uno_c_ci_high": 0.6421492233794011,
+    "legacy_risk_harrell_c_ci_low": 0.5076101534624679,
+    "legacy_risk_harrell_c_ci_high": 0.6266216333530641,
+    "legacy_risk_uno_c_ci_low": 0.5117474931278025,
+    "legacy_risk_uno_c_ci_high": 0.6261842663676968,
+    "clinical_oof_risk_harrell_c_ci_low": 0.49531835676211694,
+    "clinical_oof_risk_harrell_c_ci_high": 0.6094219418748588,
+    "clinical_oof_risk_uno_c_ci_low": 0.5074921098396749,
+    "clinical_oof_risk_uno_c_ci_high": 0.6141697272809769,
+    "combined_oof_risk_harrell_c_ci_low": 0.5557953711829856,
+    "combined_oof_risk_harrell_c_ci_high": 0.6668302286187718,
+    "combined_oof_risk_uno_c_ci_low": 0.5675135719584604,
+    "combined_oof_risk_uno_c_ci_high": 0.6730281623336133,
+    "delta_uno_v4_vs_v2_ci_low": -0.033636097187057165,
+    "delta_uno_v4_vs_v2_ci_high": 0.06304068053484974,
+    "delta_uno_v4_vs_v2_probability_gt_zero": 0.7145,
+    "delta_harrell_v4_vs_v2_ci_low": -0.036885946280953964,
+    "delta_harrell_v4_vs_v2_ci_high": 0.05952149006105529,
+    "delta_harrell_v4_vs_v2_probability_gt_zero": 0.6585,
+    "delta_uno_v4_vs_legacy_ci_low": -0.012027309231772488,
+    "delta_uno_v4_vs_legacy_ci_high": 0.08971329622585734,
+    "delta_uno_v4_vs_legacy_probability_gt_zero": 0.932,
+    "delta_uno_combined_vs_clinical_ci_low": 0.02309331908910845,
+    "delta_uno_combined_vs_clinical_ci_high": 0.09341008662668049,
+    "delta_uno_combined_vs_clinical_probability_gt_zero": 1.0,
+    "delta_uno_combined_vs_v4_ci_low": -0.03900602287081033,
+    "delta_uno_combined_vs_v4_ci_high": 0.06134706824588071,
+    "delta_uno_combined_vs_v4_probability_gt_zero": 0.666
+  },
+  "absolute_survival_values_emitted": false,
+  "paca_ca_used_for_tuning": false,
+  "endpoint_or_exclusion_changed_after_scoring": false,
+  "interpretation": "The frozen continuous relative-risk model shows prespecified independent discrimination and adjusted prognostic association in PACA-CA. This supports a strong computational validation claim but not clinical deployment or guaranteed journal acceptance.",
+  "hashes": {
+    "model": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+    "v2_model": "273a1794f82ad046e083124a72210ae703df59d36ba9c9cb6c2e039fec01d183",
+    "analysis_script": "4e6a067fd7c55c6648a02cf365cac5b76fca4e36bd3b4aa3e16ccbd95ba9c0ca",
+    "analysis_lock": "bfbe0d7fd97ad4e174695ccb332696b401c588973e12840784c949f2f8f6251a",
+    "eligibility": "7cf5323ce06ada083b1ebf25e38be8306bc7c1c3fa5b70da1e939cb9e9800f36",
+    "expression": "5ee8dc32c73c74bb7090a83b379e127220168d9fac4aa81ec81a1126eb6fee0f",
+    "clinical": "83dbc2b53dfd96a3774f287a27a72b6db8978e492f6ab8e984abf9f62969239f"
+  }
+}

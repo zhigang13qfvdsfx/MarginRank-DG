@@ -1,0 +1,34 @@
+{
+  "status": "POSTFREEZE_ANTI_OVERFIT_AUDIT_COMPLETE",
+  "interpretation": "descriptive diagnostic; it did not change the frozen model",
+  "nested_selection": {
+    "outer_domains": 10,
+    "mean_inner_uno": 0.6324224166991306,
+    "mean_outer_uno": 0.622713331991336,
+    "mean_inner_minus_outer": 0.009709084707794436,
+    "median_inner_minus_outer": 0.014861273527320251,
+    "maximum_absolute_gap": 0.0676909918193982,
+    "outer_domains_above_chance": 10,
+    "outer_domain_minimum": 0.5736350557556075
+  },
+  "paca_ca_fixed_risk_permutation": {
+    "n": 168,
+    "observed_harrell_c": 0.6054209642600143,
+    "null_mean": 0.5003861837371072,
+    "null_sd": 0.02734102672667403,
+    "null_q025": 0.44670784360757976,
+    "null_q975": 0.5520928280163108,
+    "permutations": 2000,
+    "seed": 550400,
+    "p_ge_observed": 0.0004997501249375312
+  },
+  "frozen_model_unchanged": true,
+  "model_sha256": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+  "descriptive_conditions": {
+    "nested_mean_absolute_gap_le_0_10": true,
+    "nested_outer_mean_uno_ge_0_60": true,
+    "all_outer_domains_above_chance": true,
+    "paca_ca_fixed_risk_above_permutation_null": true
+  },
+  "descriptive_status": "PASS"
+}

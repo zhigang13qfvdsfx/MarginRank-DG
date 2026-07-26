@@ -1,0 +1,89 @@
+{
+  "status": "LOCKED_BEFORE_FIRST_PACA_CA_V4_SCORE",
+  "locked_local_date": "2026-07-22",
+  "cohort": "ICGC PACA-CA",
+  "role": "fresh primary-tumour time-to-event validation",
+  "endpoint": "overall survival in months; death from donor_vital_status",
+  "model_output": "continuous frozen raw relative-risk score; no absolute survival probability, survival time, or clinical cutoff",
+  "model_sha256": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+  "v2_model_sha256": "273a1794f82ad046e083124a72210ae703df59d36ba9c9cb6c2e039fec01d183",
+  "eligibility_sha256": "7cf5323ce06ada083b1ebf25e38be8306bc7c1c3fa5b70da1e939cb9e9800f36",
+  "expression_sha256": "5ee8dc32c73c74bb7090a83b379e127220168d9fac4aa81ec81a1126eb6fee0f",
+  "clinical_sha256": "83dbc2b53dfd96a3774f287a27a72b6db8978e492f6ab8e984abf9f62969239f",
+  "analysis_script_sha256": "4e6a067fd7c55c6648a02cf365cac5b76fca4e36bd3b4aa3e16ccbd95ba9c0ca",
+  "primary_analysis": {
+    "discrimination": [
+      "Harrell concordance",
+      "Uno IPCW concordance truncated at 36 months"
+    ],
+    "association": "robust Cox hazard ratio per one population-standard-deviation increase in frozen raw risk",
+    "adjustment": "penalized robust Cox with fixed age, sex, stage, grade, and missingness encodings",
+    "time_dependent_auc_months": [12, 24, 36],
+    "risk_groups": "within-cohort tertiles are descriptive only and are not deployable clinical thresholds",
+    "calibration": "not assessed because absolute survival is disabled"
+  },
+  "fixed_adjustment_encoding": {
+    "age": "(age-65)/10; missing imputed to 65 plus missing indicator",
+    "sex": "male versus other",
+    "stage": "advanced IIB/III/IV versus early IA/IB/IIA/T3N0M0 plus missing/other indicator",
+    "grade": "poor/undifferentiated/G3 versus well/moderate plus missing/other indicator",
+    "cox_penalizer": 0.01
+  },
+  "comparators": {
+    "frozen_predecessor": "TransSurv-PDAC v2.1 raw risk",
+    "legacy_signature": "the fixed six-gene manuscript predecessor using outcome-free cohort standardization",
+    "clinical_only": "fixed-feature repeated cross-fitted Cox",
+    "combined": "fixed clinical features plus frozen v4 risk in the same cross-fitting splits"
+  },
+  "clinical_crossfit_repeats": 10,
+  "clinical_crossfit_folds": 5,
+  "clinical_crossfit_seed": 410168,
+  "clinical_cox_alpha": 0.1,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 410040,
+  "prespecified_subgroups": [
+    "age <65 and >=65",
+    "female and male",
+    "early and advanced stage",
+    "well/moderate and poor/undifferentiated grade",
+    "primary tumour-other/laser-processing and solid tissue",
+    "total read count <5 million and >=5 million"
+  ],
+  "subgroup_inference_rule": "estimate discrimination and HR only for n>=15 and events>=8; a clear reversal affecting the main gate requires n>=40, events>=20, and HR 95% CI upper<1",
+  "external_gate": {
+    "GREEN_INDEPENDENT_VALIDATION": [
+      "Harrell C >=0.60",
+      "36-month Uno C >=0.60",
+      "unadjusted HR 95% CI lower >1",
+      "adjusted HR 95% CI lower >1",
+      "no clear reversal in a large prespecified subgroup"
+    ],
+    "AMBER_DIRECTIONAL_SUPPORT": [
+      "Harrell C >=0.56",
+      "36-month Uno C >=0.56",
+      "unadjusted and adjusted HR per SD >1",
+      "no clear reversal in a large prespecified subgroup"
+    ],
+    "RED_NOT_SUPPORTED": "otherwise"
+  },
+  "computational_top_tier_readiness": [
+    "fresh independent validation gate is green",
+    "bootstrap lower 95% bound for v4 Uno C >=0.55",
+    "v4 Uno gain over frozen v2 predecessor >=0.01",
+    "bootstrap probability that v4 Uno exceeds v2 Uno >=0.80",
+    "combined Uno gain over cross-fitted clinical-only model >=0.015",
+    "bootstrap probability that combined Uno exceeds clinical-only Uno >=0.80"
+  ],
+  "gate_interpretation": {
+    "GREEN_INDEPENDENT_VALIDATION": "The frozen continuous relative-risk model shows prespecified independent discrimination and adjusted prognostic association in PACA-CA. This supports a strong computational validation claim but not clinical deployment or guaranteed journal acceptance.",
+    "AMBER_DIRECTIONAL_SUPPORT": "The result is directionally supportive but below the locked independent-validation target. PACA-CA remains consumed and cannot be used for tuning; claims must be narrowed.",
+    "RED_NOT_SUPPORTED": "The frozen model is not independently supported in PACA-CA under the locked rules. The result must be retained and the model cannot be repaired using PACA-CA outcomes."
+  },
+  "prohibited_after_scoring": [
+    "feature, coefficient, anchor, normalization, or model-family changes informed by PACA-CA",
+    "endpoint switching, optimized cutoff selection, outcome-driven exclusion, or favorable subgroup selection",
+    "relabeling PACA-CA as development or omitting an unfavorable result",
+    "emitting absolute survival estimates or decision-curve claims"
+  ],
+  "risk_scores_generated_at_lock": false
+}

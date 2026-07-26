@@ -1,0 +1,65 @@
+{
+  "status": "V4_POSTFREEZE_ABLATION_AND_INVARIANCE_COMPLETE",
+  "overall_gate": "PASS",
+  "explanatory_gate": "PASS",
+  "explanatory_conditions": {
+    "anchor_noninferior_mean": true,
+    "anchor_noninferior_worst_domain": true,
+    "auxiliary_improves_worst_domain": true,
+    "auxiliary_reduces_dispersion": true,
+    "forty_gene_mean_above_size_controls": true,
+    "forty_gene_worst_above_twenty": true,
+    "forty_gene_worst_above_eighty": true,
+    "pooled_improves_worst_vs_expert": true,
+    "pooled_reduces_dispersion_vs_expert": true,
+    "single_gene_mean_drop_bounded": true,
+    "single_gene_mean_correlation_preserved": true
+  },
+  "invariance_gate": "PASS",
+  "invariance_conditions": {
+    "raw_risk_numerically_identical": true,
+    "rank_order_identical": true,
+    "all_ten_domains_in_mixed_batch": true,
+    "sample_count_sufficient": true
+  },
+  "architecture_effects": {
+    "anchor_mean_uno_delta": 0.0018991267646384369,
+    "anchor_worst_uno_delta": 0.004031644164200765,
+    "auxiliary_mean_uno_delta": 0.005914932820018648,
+    "auxiliary_worst_uno_delta": 0.034269784359073685,
+    "auxiliary_sd_uno_reduction": 0.0157472887925091,
+    "pooled_worst_uno_delta_vs_expert": 0.03225340807743349,
+    "pooled_sd_uno_reduction_vs_expert": 0.015413833819848,
+    "forty_worst_uno_delta_vs_twenty": 0.0231792039313351,
+    "forty_worst_uno_delta_vs_eighty": 0.0595952646418102
+  },
+  "single_gene_robustness": {
+    "maximum_mean_uno_drop": 0.0098574725106164,
+    "minimum_mean_risk_correlation": 0.9521630258826228
+  },
+  "invariance": {
+    "samples_checked": 150,
+    "development_domains": 10,
+    "affine_expression_samples": 30,
+    "maximum_absolute_raw_risk_difference": 3.3306690738754696e-16,
+    "rmse_raw_risk_difference": 7.055387428506419e-17,
+    "spearman_correlations": {
+      "native_vs_alone": 1.0,
+      "native_vs_mixed": 1.0,
+      "native_vs_permuted": 1.0,
+      "expression_vs_affine": 1.0
+    },
+    "note": "Within-batch percentiles and tiers are intentionally cohort-relative; only raw risk is composition invariant."
+  },
+  "formal_superiority_claimed": false,
+  "model_changed": false,
+  "paca_ca_used_for_tuning": false,
+  "hashes": {
+    "lock": "2a9960eeeff2bf0008b27c56df013189456388027c223f4fefc3ce03f709fd1d",
+    "model": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+    "candidate_ranking": "d28729e9da7a8079aaf2bb6b69d5d7518d84b3e27c174709890a3061a47cfd5e",
+    "candidate_loso": "8b4ee697755f0e1dc2eccece53460b9384052d76430fd0c61377ef898d252340",
+    "leave_one_gene_out": "53318409710779d5cf8d55a085df46e955e6dc6b7943253d72f2ad6c7cf3f6aa",
+    "script": "c4f1db70cf84b6971474f608a11ab8bbc5a9ed8e70c0ccfb19593abf755c4c9e"
+  }
+}

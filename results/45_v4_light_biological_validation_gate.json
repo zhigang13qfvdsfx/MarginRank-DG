@@ -1,0 +1,110 @@
+{
+  "status": "V4_LIGHT_BIOLOGICAL_VALIDATION_COMPLETE",
+  "overall_supportive_gate": "FAIL",
+  "pathway_gate": "FAIL",
+  "single_cell_gate": "PASS",
+  "single_cell_conditions": {
+    "technical_coverage": true,
+    "cell_type_localization": true,
+    "matched_metastasis_direction": false,
+    "basal_alignment": true
+  },
+  "technical": {
+    "matrix_genes_parsed": 33694,
+    "annotation_cells": 69204,
+    "patients": 21,
+    "cell_types": 7,
+    "selected_genes_detected": 40,
+    "selected_genes_missing": [],
+    "basal_markers_detected": [
+      "KRT5",
+      "KRT6A",
+      "KRT14",
+      "KRT17",
+      "TP63",
+      "S100A2",
+      "LAMC2"
+    ],
+    "classical_markers_detected": [
+      "GATA6",
+      "HNF1A",
+      "HNF4A",
+      "KRT8",
+      "KRT18",
+      "KRT19",
+      "TFF1",
+      "TFF2",
+      "MSLN"
+    ],
+    "eligible_pseudobulks": 137
+  },
+  "pathway": {
+    "significant_all_selected_terms": 1,
+    "top_terms": [
+      {
+        "source": "WP",
+        "native": "WP:WP4966",
+        "name": "Fluoroacetic acid toxicity",
+        "p_value": 0.02685806224906852,
+        "intersection_size": 2
+      }
+    ]
+  },
+  "cell_type_localization": {
+    "kruskal_wallis_statistic": 58.16929445352878,
+    "kruskal_wallis_p": 1.0588577635106247e-10,
+    "highest_median_cell_type": "Myeloid",
+    "cell_type_medians": {
+      "Myeloid": 0.13049294143303294,
+      "Ductal cell": 0.12580374759530824,
+      "Acinar cell": -0.013446707067683179,
+      "Endothelial cell": -0.03988291752648355,
+      "T cell": -0.09701001538330717,
+      "B cell": -0.1109500160387186,
+      "Fibroblast": -0.2214743267696521
+    }
+  },
+  "matched_metastasis": {
+    "paired_patients": 7,
+    "median_delta_lm_minus_pm1": -0.010153662291284199,
+    "positive_pairs": 2,
+    "one_sided_wilcoxon_p": 0.921875
+  },
+  "primary_metastatic_context": {
+    "median_pm1_minus_pm0_ductal": 0.07030274681839328,
+    "one_sided_mann_whitney_p": 0.24682180564533507
+  },
+  "basal_classical_alignment": {
+    "ductal_pseudobulks": 30,
+    "spearman_rho": 0.5773081201334815,
+    "spearman_p": 0.0008371731863061661
+  },
+  "sensitivity": {
+    "unweighted_weighted_spearman": 0.7484038680530923,
+    "matched_leave_one_patient_out_positive_fraction": 0.0,
+    "matched_leave_one_patient_out_median_deltas": [
+      -0.063102649244883,
+      -0.063102649244883,
+      -0.06177470878711655,
+      -0.00882572183351775,
+      -0.00882572183351775,
+      -0.063102649244883,
+      -0.00882572183351775
+    ],
+    "eligible_pseudobulks_at_50_cells": 111
+  },
+  "model_changed": false,
+  "single_cell_used_for_tuning": false,
+  "causal_or_wet_lab_validation_claimed": false,
+  "hashes": {
+    "plan": "60d80cff395eb27a3e678b74fe67b65ae5e79d305fb5cbeddf40a749976a8231",
+    "counts": "1343613bfa370f83d26d55dc763cf65dda527bff8d70f23f651fa5f6644c6424",
+    "annotation": "5ce28b447a8855034e642f920111e9df08aacc0861132879722911206063ed43",
+    "coefficients": "e910b0797c476762162fcb75ab35e92b70621a8cf8f8584766f2034004255226",
+    "universe": "48d6dcf42735ed3018b77bba4375c86accc75d04c46b76238bb2930f6a8db504",
+    "script": "af7785b7a168aa354e92a8e622206a928e6dc6e3e3f501e89b64dee5dac755d4",
+    "gprofiler_v4_all_selected_gost_raw": "2cc7f147a9efa26ce05cfff092e86d7ec37489ef139e19e121730714ed4ba8db",
+    "gprofiler_v4_risk_positive_gost_raw": "082fa4d98417a183ce2a6d6ecb572a7c9e1a9831478411ec497a9a13e047d82d",
+    "gprofiler_v4_risk_negative_gost_raw": "d784bbd45cf30f245f9a00c3744a5db06a2760bfa2e0cb51a9f12efe208e01ee"
+  }
+}

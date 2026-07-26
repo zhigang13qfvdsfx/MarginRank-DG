@@ -1,0 +1,46 @@
+{
+  "status": "LOCKED_BEFORE_ANY_V4_FRESH_RISK_SCORE",
+  "locked_local_date": "2026-07-22",
+  "trigger": "The prespecified PRINCE pretreatment-only audit retained 63 patients but only 15 deaths, below the locked minimum of 20 events. Before any v4 fresh-cohort risk score was generated, the official relocated ICGC Release 28 open bucket was found to contain an unused independent PACA-CA expression-and-survival cohort.",
+  "new_primary_candidate": {
+    "project": "PACA-CA",
+    "source": "ICGC Release 28 relocated open-access object bucket",
+    "endpoint": "overall survival from donor_survival_time and donor_vital_status",
+    "expression": "exp_seq normalized_read_count, Ensembl GRCh37",
+    "context": "Canadian primary pancreatic cancer specimens",
+    "role": "fresh primary-tumour time-to-event validation; never model development or tuning"
+  },
+  "eligibility_rules": {
+    "project_code": "PACA-CA",
+    "survival": "donor_survival_time must be numeric and greater than 30 days; donor_vital_status must be alive or deceased",
+    "specimen": "specimen_type must begin with 'Primary tumour'; normal, recurrent, and metastatic specimens are excluded",
+    "treatment": "specimen_donor_treatment_type must be 'no treatment' or missing; any explicitly pretreated specimen is excluded",
+    "expression": "an exp_seq record must map through the frozen donor-specimen-sample hierarchy",
+    "minimum_cohort": "at least 100 eligible donors and at least 50 deaths",
+    "coverage": "at least 80% of the 11,681-gene frozen rank universe, at least 80% of selected genes, and at least 50% of anchor genes per selected sample",
+    "sample_selection": [
+      "retain only eligible primary-tumour expression samples",
+      "prefer the largest frozen-universe coverage",
+      "then prefer the largest total_read_count",
+      "then use lexicographically smallest icgc_sample_id and analysis_id"
+    ],
+    "duplicate_rule": "exactly one expression profile per donor after the deterministic outcome-blind selection rule",
+    "overlap_rule": "project, donor, submitted donor, specimen, sample, and submitted sample identifiers must be disjoint from all development domains; any detected overlap is excluded and logged"
+  },
+  "governance": {
+    "no_fresh_scores_generated_at_lock": true,
+    "model_hash_at_lock": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+    "forbidden": [
+      "feature or coefficient changes after PACA-CA outcome association",
+      "outcome-driven sample choice, normalization, exclusion, or cutoff selection",
+      "using PACA-CA to choose among v4 variants",
+      "suppressing an unfavorable PACA-CA result"
+    ]
+  },
+  "other_candidates": {
+    "PRINCE": "fails the prespecified primary eligibility gate because pretreatment-only selection yields 15 deaths; may be shown only as explicitly exploratory cross-context application after all scripts are locked",
+    "GSE77435": "retained as a fresh small extreme-survivor binary stress test",
+    "GSE277386": "remains conditional on locating an exact public sample-to-OS map before scoring"
+  },
+  "interpretive_constraint": "PACA-CA can provide strong independent computational validation if eligible, but it cannot guarantee acceptance in a top-quartile journal and does not replace prospective or wet-laboratory validation."
+}

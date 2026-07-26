@@ -1,0 +1,12 @@
+domain,role,n,events,genes_before_intersection,v4_universe_genes,rank_missing_fraction,clinical_expression_aligned
+TCGA_PAAD,primary_development,148,85,20515,11681,0.0,True
+CPTAC_PDACC,primary_development,134,76,27966,11681,0.0,True
+GSE62452,primary_development,65,49,20002,11681,0.0,True
+GSE85916,primary_development,79,57,18448,11681,0.0,True
+E-MTAB-6134,primary_development,288,181,18382,11681,0.0,True
+GSE183795,primary_development,134,86,22685,11681,0.0,True
+GSE57495,primary_development,63,42,22073,11681,0.0,True
+GSE79668,primary_development,51,45,44417,11681,0.0,True
+PACA-AU,primary_development,96,64,16659,11681,0.0,True
+GSE71729,primary_development,123,83,18047,11681,0.0,True
+GSE205154_MET,auxiliary_metastatic_development,70,53,38450,11681,0.0,True

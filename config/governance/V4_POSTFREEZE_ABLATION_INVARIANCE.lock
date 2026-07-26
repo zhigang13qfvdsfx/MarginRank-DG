@@ -1,0 +1,52 @@
+{
+  "status": "LOCKED_POSTFREEZE_EXPLANATORY_ANALYSIS_BEFORE_INVARIANCE_SCORING",
+  "date": "2026-07-22",
+  "purpose": "Explain the already frozen v4 architecture and test outcome-free inference invariance. This analysis cannot change model features, coefficients, endpoints, exclusions, or the PACA-CA interpretation.",
+  "analysis_class": {
+    "architecture_ablation": "post-selection explanatory analysis using development-only LOSO results generated before PACA-CA scoring",
+    "invariance": "prospectively locked outcome-free technical verification",
+    "leave_one_gene_out": "development-only robustness summary generated before PACA-CA scoring"
+  },
+  "locked_model": "src/transsurv/models/transsurv_pdac_v4_marginrank_locked.joblib",
+  "selected_candidate": "anchor_g40_p0__pooled_ridge_a1__aux",
+  "comparators": {
+    "without_anchor": "rank_g40_p0__pooled_ridge_a1__aux",
+    "without_auxiliary_domain": "anchor_g40_p0__pooled_ridge_a1__primary",
+    "expert_ensemble": "anchor_g40_p0__expert_median_a10__aux",
+    "twenty_genes": "anchor_g20_p0__pooled_ridge_a1__aux",
+    "eighty_genes": "anchor_g80_p0__pooled_ridge_a1__aux",
+    "hybrid_margin": "hybrid_g40_p40__pooled_ridge_a1__aux"
+  },
+  "explanatory_gate": {
+    "anchor_mean_uno_delta_minimum": 0.0,
+    "anchor_worst_uno_delta_minimum": 0.0,
+    "auxiliary_worst_uno_delta_minimum": 0.02,
+    "auxiliary_sd_uno_reduction_minimum": 0.01,
+    "forty_gene_mean_uno_above_both_size_controls": true,
+    "forty_gene_worst_uno_delta_vs_twenty_minimum": 0.015,
+    "forty_gene_worst_uno_delta_vs_eighty_minimum": 0.03,
+    "pooled_worst_uno_delta_vs_expert_minimum": 0.02,
+    "pooled_sd_uno_reduction_vs_expert_minimum": 0.01,
+    "maximum_single_gene_mean_uno_drop": 0.01,
+    "minimum_single_gene_mean_risk_correlation": 0.95
+  },
+  "invariance_gate": {
+    "maximum_absolute_raw_risk_difference": 1e-12,
+    "minimum_raw_risk_correlation": 0.999999999,
+    "minimum_development_domains_in_mixed_batch": 10,
+    "minimum_samples_checked": 100,
+    "tests": [
+      "same rank profile scored in its native cohort versus alone",
+      "same rank profile scored in a mixed ten-platform batch",
+      "same rank profile scored after gene-column permutation",
+      "same expression profile scored after sample-specific strictly increasing affine transformation"
+    ]
+  },
+  "forbidden": [
+    "PACA-CA tuning or model comparison-driven changes",
+    "feature reselection",
+    "coefficient refitting",
+    "endpoint or exclusion changes",
+    "claiming formal superiority from ten development domains"
+  ]
+}

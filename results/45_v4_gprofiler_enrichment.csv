@@ -1,0 +1,7 @@
+query,source,native,name,p_value,significant,term_size,query_size,intersection_size,effective_domain_size,precision,recall
+all_selected,WP,WP:WP4966,Fluoroacetic acid toxicity,0.02685806224906852,True,6,40,2,11747,0.05,0.3333333333333333
+risk_negative,WP,WP:WP4966,Fluoroacetic acid toxicity,0.003993072744788941,True,6,17,2,11747,0.11764705882352941,0.3333333333333333
+risk_negative,KEGG,KEGG:00053,Ascorbate and aldarate metabolism,0.007500131333907443,True,12,17,2,11747,0.11764705882352941,0.16666666666666666
+risk_negative,KEGG,KEGG:00340,Histidine metabolism,0.011901589701480232,True,15,17,2,11747,0.11764705882352941,0.13333333333333333
+risk_negative,KEGG,KEGG:00410,beta-Alanine metabolism,0.03938104205345071,True,27,17,2,11747,0.11764705882352941,0.07407407407407407
+risk_negative,KEGG,KEGG:00380,Tryptophan metabolism,0.04237428268653785,True,28,17,2,11747,0.11764705882352941,0.07142857142857142

@@ -1,0 +1,52 @@
+{
+  "status": "LOCKED_BEFORE_FIRST_GSE77435_RISK_SCORE",
+  "date": "2026-07-22",
+  "cohort": "GSE77435",
+  "role": "independent extreme-survival binary-phenotype validation",
+  "endpoint": "short survival (<10 months) versus long survival (>20 months), exactly as deposited in GEO",
+  "primary_predictor": "continuous frozen v4 raw relative-risk score; higher values predict short survival",
+  "primary_metric": "ROC AUC without direction flipping",
+  "secondary_metrics": [
+    "stratified bootstrap 95% CI",
+    "one-sided label-permutation P value",
+    "odds ratio per one SD risk",
+    "Mann-Whitney effect",
+    "outcome-free median-risk split balanced accuracy"
+  ],
+  "comparators": [
+    "frozen v2 predecessor",
+    "locked legacy six-gene score"
+  ],
+  "validation_gate": {
+    "minimum_auc": 0.70,
+    "minimum_bootstrap_auc_lower_95": 0.55,
+    "maximum_permutation_p": 0.05,
+    "minimum_or_ci_lower": 1.0,
+    "minimum_median_split_balanced_accuracy": 0.65,
+    "minimum_distinct_risks": 23
+  },
+  "additional_evidence_gate": {
+    "minimum_auc_gain_over_v2": 0.02,
+    "minimum_probability_v4_gt_v2": 0.75,
+    "minimum_auc_gain_over_legacy": 0.05,
+    "minimum_probability_v4_gt_legacy": 0.80
+  },
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 440044,
+  "permutation_replicates": 10000,
+  "permutation_seed": 774350,
+  "model_sha256": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+  "v2_model_sha256": "273a1794f82ad046e083124a72210ae703df59d36ba9c9cb6c2e039fec01d183",
+  "expression_sha256": "9acba588a579c2075ee6b8db81380fb4c6d7621339467c547a2d4442e10a6c99",
+  "clinical_sha256": "69fa18c465a33cb5be4292aa530f16827cb2e156e76a6b1fff020347b5b98e01",
+  "correction_sha256": "a6a85a768cfc42f3905be44e4d8e7d071c9485c4137debbc4b62baeaab53f0c7",
+  "analysis_script_sha256": "bc8da1d811ca8e355e4a50303eca25c06b3994ec77c4acf42f8e2d075fa247c6",
+  "forbidden": [
+    "refitting, feature selection, coefficient changes, or score sign flipping",
+    "sample exclusion after scoring",
+    "changing the deposited short/long outcome labels",
+    "claiming time-to-event discrimination, calibration, or clinical utility",
+    "reusing GSE77435 for subsequent model tuning"
+  ],
+  "reporting_rule": "Report all conditions, confidence intervals, comparator results, the small extreme-sampling design, the prior stopped mapping attempt, and the factual correction regardless of outcome."
+}

@@ -1,0 +1,166 @@
+{
+  "status": "PRINCE_EXPLORATORY_TRANSPORTABILITY_CONSUMED_ONCE",
+  "exploratory_gate": "NOT_SUPPORTIVE",
+  "conditions": {
+    "harrell_c": false,
+    "uno_c": false,
+    "hr_point": false,
+    "hr_lower_relaxed": false,
+    "bootstrap_harrell_lower": false,
+    "ph_assumption": true,
+    "no_large_subgroup_reversal": false,
+    "coverage": true
+  },
+  "cohort": "PRINCE pretreatment metastatic PDAC",
+  "n": 63,
+  "events": 15,
+  "uno_tau_months": 18.0,
+  "primary": {
+    "harrell_c": 0.3482142857142857,
+    "uno_c": 0.3380296114320534,
+    "hr_per_sd": 0.44742982206667814,
+    "hr_ci_low": 0.21524369165619986,
+    "hr_ci_high": 0.9300781088366588,
+    "hr_p": 0.031227884916976995,
+    "ph_test_p": 0.6249841381623586
+  },
+  "adjusted": {
+    "hr_per_sd": 0.6778486514980367,
+    "hr_ci_low": 0.5029890496299283,
+    "hr_ci_high": 0.91349661523599,
+    "hr_p": 0.010638162732378461,
+    "penalizer": 0.1,
+    "covariates": [
+      "age_per_10y",
+      "male",
+      "stage_iv"
+    ]
+  },
+  "comparators": {
+    "v4_risk": {
+      "harrell_c": 0.3482142857142857,
+      "uno_c": 0.3380296114320534,
+      "hr_per_sd": 0.44742982206667814,
+      "hr_ci_low": 0.21524369165619986,
+      "hr_ci_high": 0.9300781088366588,
+      "hr_p": 0.031227884916976995,
+      "ph_test_p": 0.6249841381623586
+    },
+    "v2_risk": {
+      "harrell_c": 0.4955357142857143,
+      "uno_c": 0.5166611189472881,
+      "hr_per_sd": 0.8685950197622239,
+      "hr_ci_low": 0.5583184456377049,
+      "hr_ci_high": 1.35130285279041,
+      "hr_p": 0.5321132354281493,
+      "ph_test_p": 0.5952361714533136
+    },
+    "legacy_risk": {
+      "harrell_c": 0.36607142857142855,
+      "uno_c": 0.34731335738511254,
+      "hr_per_sd": 0.6665180674859236,
+      "hr_ci_low": 0.3062036453016684,
+      "hr_ci_high": 1.4508198746213612,
+      "hr_p": 0.3066472263115772,
+      "ph_test_p": 0.9608392230756557
+    }
+  },
+  "bootstrap": {
+    "valid_replicates": 1999,
+    "harrell_ci_95": [
+      0.15439510396303538,
+      0.5419938820912125
+    ],
+    "uno_ci_95": [
+      0.12475782881109143,
+      0.5789492046550356
+    ],
+    "delta_uno_v4_vs_v2_ci_95": [
+      -0.3387629882872481,
+      -0.04397969045732971
+    ],
+    "probability_v4_uno_gt_v2": 0.003501750875437719,
+    "delta_uno_v4_vs_legacy_ci_95": [
+      -0.19925437447719477,
+      0.18294822703321623
+    ],
+    "probability_v4_uno_gt_legacy": 0.4737368684342171
+  },
+  "subgroups": [
+    {
+      "subgroup": "female",
+      "n": 25,
+      "events": 7,
+      "harrell_c": 0.3728813559322034,
+      "uno_c": 0.3958315701499834,
+      "hr_per_sd": 0.4875628652108231,
+      "hr_ci_low": 0.18222147234876362,
+      "hr_ci_high": 1.3045528853899644,
+      "hr_p": 0.15256025419624195,
+      "ph_test_p": 0.6819053833789896
+    },
+    {
+      "subgroup": "male",
+      "n": 38,
+      "events": 8,
+      "harrell_c": 0.35454545454545455,
+      "uno_c": 0.30794190325530163,
+      "hr_per_sd": 0.7341472987963564,
+      "hr_ci_low": 0.26789390203033936,
+      "hr_ci_high": 2.0118869905032306,
+      "hr_p": 0.5479390702208327,
+      "ph_test_p": 0.5091838628066522
+    },
+    {
+      "subgroup": "stage_iv",
+      "n": 48,
+      "events": 10,
+      "harrell_c": 0.4186046511627907,
+      "uno_c": 0.3950508946760972,
+      "hr_per_sd": 0.6296906904043527,
+      "hr_ci_low": 0.3119757786680318,
+      "hr_ci_high": 1.2709652245273515,
+      "hr_p": 0.19676360984245256,
+      "ph_test_p": 0.565343223898661
+    },
+    {
+      "subgroup": "liver_biopsy",
+      "n": 41,
+      "events": 8,
+      "harrell_c": 0.39215686274509803,
+      "uno_c": 0.401638717001462,
+      "hr_per_sd": 0.4904598340925756,
+      "hr_ci_low": 0.18894330553876967,
+      "hr_ci_high": 1.2731377180693901,
+      "hr_p": 0.14324465633088354,
+      "ph_test_p": 0.6877289254543166
+    },
+    {
+      "subgroup": "other_or_unknown_biopsy",
+      "n": 22,
+      "events": 7,
+      "harrell_c": 0.3442622950819672,
+      "uno_c": 0.3101479933842901,
+      "hr_per_sd": 0.5410593040784177,
+      "hr_ci_low": 0.1943449644828135,
+      "hr_ci_high": 1.5063172401140863,
+      "hr_p": 0.23967910728811226,
+      "ph_test_p": 0.7353048987026207
+    }
+  ],
+  "legacy_gene_coverage": 0.8333333333333334,
+  "primary_validation_claimed": false,
+  "clinical_utility_claimed": false,
+  "absolute_survival_values_emitted": false,
+  "model_changed": false,
+  "paca_ca_used_for_tuning": false,
+  "interpretation": "Underpowered exploratory transportability stress test in pretreatment metastatic PDAC; it cannot replace the event-qualified PACA-CA primary validation.",
+  "hashes": {
+    "model_sha256": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+    "v2_model_sha256": "273a1794f82ad046e083124a72210ae703df59d36ba9c9cb6c2e039fec01d183",
+    "eligibility_sha256": "fd986dcb4abc803f833faf07c1b4c738f1c5ffef8571ef011e864b127b4a75f4",
+    "expression_sha256": "4a53e67c13f6aec9d8ae476c8ff020c0cb8c3cb30f28695caa72d09c2f4b0d7f",
+    "clinical_sha256": "ddf7c34232925f7d8a4666d88b6a5ed64580547b877ea6ad67c4c3e36b475834",
+    "analysis_script_sha256": "315faaf1058edeb24fa37baf9b95ced0c0c02f3e6d25b3bddbb1e10f8c9def52"
+  }
+}

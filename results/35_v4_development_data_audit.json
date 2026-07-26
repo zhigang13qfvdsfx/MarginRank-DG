@@ -1,0 +1,26 @@
+{
+  "status": "V4_EXPANDED_DEVELOPMENT_READY",
+  "primary_domains": [
+    "TCGA_PAAD",
+    "CPTAC_PDACC",
+    "GSE62452",
+    "GSE85916",
+    "E-MTAB-6134",
+    "GSE183795",
+    "GSE57495",
+    "GSE79668",
+    "PACA-AU",
+    "GSE71729"
+  ],
+  "auxiliary_domains": [
+    "GSE205154_MET"
+  ],
+  "primary_total_n": 1181,
+  "primary_total_events": 768,
+  "auxiliary_total_n": 70,
+  "auxiliary_total_events": 53,
+  "strict_common_gene_universe": 11681,
+  "gse224564_used": false,
+  "fresh_candidate_scores_generated": false,
+  "migration_lock_sha256": "0966a98fa8dea6a3dc9ae99a12af3f6031aed59e892bd737cd598a75fec952a8"
+}

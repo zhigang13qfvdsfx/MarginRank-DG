@@ -1,0 +1,26 @@
+{
+  "status": "CANDIDATES_RESERVED_BEFORE_V4_MODEL_SELECTION",
+  "locked_local_date": "2026-07-22",
+  "primary_fresh_cross_context_candidate": {
+    "study": "paad_iatlas_prince_2022",
+    "source": "public cBioPortal/iAtlas PRINCE trial study",
+    "context": "stage-IV metastatic PDAC; predominantly pretreatment FFPE biopsies",
+    "endpoint_only_audit": "73 patients have public OS_MONTHS and OS_STATUS among 74 clinical patients; RNA-seq sample list is public",
+    "role": "fresh metastatic transportability stress test, not a resected-primary validation",
+    "eligibility": "one pretreatment RNA-seq sample per patient, valid OS, at least 40 patients and 20 deaths, adequate frozen-feature coverage, and no identifier overlap with development"
+  },
+  "secondary_fresh_binary_candidate": {
+    "study": "GSE77435",
+    "source": "NCBI GEO",
+    "context": "24 resected primary PDAC extreme survivors",
+    "endpoint": "prespecified long-term (>20 months; n=11) versus short-term (<10 months; n=13) group",
+    "role": "small orthogonal direction-only stress test; never a time-to-event validation"
+  },
+  "conditional_candidate": {
+    "study": "GSE277386",
+    "rule": "eligible only if an exact public Sample1-Sample44 to OS time/status map is located before any v4 score is generated; author-discretion data are insufficient"
+  },
+  "no_fresh_resected_primary_time_to_event_cohort_available": true,
+  "interpretive_constraint": "Even successful fresh stress tests cannot be represented as definitive independent validation in resected primary PDAC. Top-tier publication remains an objective, not a guaranteed outcome.",
+  "access_rule": "Endpoint completeness, sample uniqueness, tissue context, and eventual frozen-feature coverage may be audited. No risk score or outcome association may be generated until the v4 bundle and one-time scripts are hashed and locked."
+}

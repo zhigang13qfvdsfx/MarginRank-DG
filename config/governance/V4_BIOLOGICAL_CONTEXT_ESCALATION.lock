@@ -1,0 +1,38 @@
+{
+  "status": "LOCKED_AFTER_40_GENE_ORA_FAILURE_BEFORE_FULL_RANKED_QUERY",
+  "date": "2026-07-22",
+  "trigger": "The prespecified 40-gene custom-background g:Profiler analysis produced only one significant, weakly interpretable term.",
+  "purpose": "Use the complete development-domain gene-survival ranking to contextualize the frozen predictor without changing it.",
+  "ranking": {
+    "genes": "all 11,681 genes in the locked v4 universe",
+    "primary_domains": 10,
+    "auxiliary_domain": "excluded from the primary pathway rank and included only as sensitivity",
+    "score": "signed cross-domain stability = sign(meta-z) * abs(meta-z) * directional consistency / (1 + between-domain z dispersion)",
+    "positive_query": "genes ordered from largest positive signed stability toward zero",
+    "negative_query": "genes ordered from most negative signed stability toward zero",
+    "outcomes": "development data only"
+  },
+  "enrichment": {
+    "method": "g:Profiler ordered query with the locked custom background",
+    "organism": "hsapiens",
+    "sources": ["GO:BP", "REAC", "KEGG", "WP", "CORUM", "HPA"],
+    "correction": "g:SCS",
+    "significance": 0.05,
+    "minimum_driver_genes": 3,
+    "term_size_range": [10, 1000]
+  },
+  "supportive_gate": {
+    "minimum_filtered_significant_terms": 10,
+    "minimum_distinct_sources": 2,
+    "minimum_cross_domain_robust_terms": 3,
+    "robust_term_minimum_domain_direction_fraction": 0.70
+  },
+  "interpretation": "Context for the broader survival-associated transcriptomic programs from which the locked features arose; not an enrichment claim for the 40-gene panel itself and not independent validation.",
+  "forbidden": [
+    "adding pathway genes to the frozen model",
+    "reweighting the predictor",
+    "using external validation outcomes",
+    "selecting only favorable pathways without reporting the full corrected results",
+    "claiming pathway causality"
+  ]
+}

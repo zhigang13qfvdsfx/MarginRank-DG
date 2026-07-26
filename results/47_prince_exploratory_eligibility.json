@@ -1,0 +1,29 @@
+{
+  "status": "PRINCE_EXPLORATORY_ELIGIBILITY_COMPLETE_NO_RISK_SCORES",
+  "study": "paad_iatlas_prince_2022",
+  "source": "official cBioPortal DataHub archive",
+  "pmid": 35662283,
+  "role": "exploratory metastatic transportability stress test",
+  "pretreatment_samples_with_valid_os": 63,
+  "pretreatment_patients": 63,
+  "deaths": 15,
+  "one_sample_per_patient": true,
+  "minimum_reference_coverage": 1.0,
+  "minimum_selected_gene_coverage": 1.0,
+  "minimum_anchor_gene_coverage": 1.0,
+  "identifier_overlap_count": 0,
+  "identifier_overlap": [],
+  "primary_validation_eligible": false,
+  "primary_ineligibility_reason": "15 deaths, below the prespecified 20-event minimum",
+  "exploratory_stress_eligible": true,
+  "risk_scores_generated": false,
+  "hashes": {
+    "archive": "0d9eb2b46047bb45fa5e0f119518b9e3949b89d45525a44fdf35f37294dbb698",
+    "expression_source": "fba9597ea9fc399cc45ceb8a647a7b24c006045d59890565b12300644b7cc550",
+    "patient_source": "794aab6763a4053f2b1ce8e0d475843edc8576347e65068fdc0d210c85403e98",
+    "sample_source": "030718754464879173a1f82925e62c9a96211bf8012c09659fd55d3f038fe067",
+    "prepared_expression": "4a53e67c13f6aec9d8ae476c8ff020c0cb8c3cb30f28695caa72d09c2f4b0d7f",
+    "prepared_clinical": "ddf7c34232925f7d8a4666d88b6a5ed64580547b877ea6ad67c4c3e36b475834",
+    "script": "841c816314e46b5534d980dd93ab073c4af3eca833a73b6ad37eb9114b3b3b52"
+  }
+}

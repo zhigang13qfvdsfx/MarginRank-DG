@@ -1,0 +1,64 @@
+{
+  "status": "LOCKED_BEFORE_GSE263733_COUNT_EXTRACTION_AND_PATHWAY_QUERY",
+  "date": "2026-07-22",
+  "model_role": "frozen; no refitting or feature selection",
+  "pathway_analysis": {
+    "query": "all 40 frozen selected genes, with risk-positive and risk-negative coefficient subsets also analyzed separately",
+    "background": "11,681-gene locked v4 cross-platform universe",
+    "service": "g:Profiler official API",
+    "organism": "hsapiens",
+    "sources": ["GO:BP", "REAC", "KEGG", "WP", "CORUM", "HPA"],
+    "multiple_testing": "g:SCS adjusted P < 0.05",
+    "minimum_significant_terms_all_genes": 2,
+    "interpretation": "exploratory mechanism annotation only; no causal claim"
+  },
+  "single_cell_dataset": {
+    "accession": "GSE263733",
+    "official_annotation_cells": 69204,
+    "patients": 21,
+    "origins": {
+      "Pm0": "primary tumour without paired liver metastasis",
+      "Pm1": "primary tumour from a patient with paired liver metastasis",
+      "Lm": "liver metastasis",
+      "Pn": "normal pancreas"
+    },
+    "cell_types": [
+      "Ductal cell",
+      "T cell",
+      "Myeloid",
+      "B cell",
+      "Fibroblast",
+      "Endothelial cell",
+      "Acinar cell"
+    ],
+    "analysis_unit": "patient-by-origin-by-cell-type pseudobulk; cells are not treated as independent biological replicates",
+    "normalization": "library-size-normalized pseudobulk logCPM followed by gene-wise z scores across eligible pseudobulks",
+    "risk_program": "coefficient-weighted mean of the frozen selected genes after unit-L1 coefficient scaling",
+    "basal_markers": ["KRT5", "KRT6A", "KRT14", "KRT17", "TP63", "S100A2", "LAMC2"],
+    "classical_markers": ["GATA6", "HNF1A", "HNF4A", "KRT8", "KRT18", "KRT19", "TFF1", "TFF2", "MSLN"],
+    "minimum_cells_per_pseudobulk": 20,
+    "minimum_selected_genes_detected": 36,
+    "minimum_matched_primary_metastasis_patients": 6
+  },
+  "single_cell_evidence_gate": {
+    "technical_coverage": "at least 36/40 selected genes and all seven declared cell types",
+    "cell_type_localization": "risk-program heterogeneity across patient-level cell-type pseudobulks, Kruskal-Wallis P < 0.05",
+    "matched_metastasis_direction": "median ductal Lm minus paired Pm1 risk-program difference > 0; one-sided paired Wilcoxon P < 0.10",
+    "basal_alignment": "ductal pseudobulk risk program correlates positively with basal-minus-classical score, Spearman rho >= 0.30 and P < 0.05",
+    "minimum_conditions_for_supportive_gate": 3,
+    "mandatory_condition": "technical_coverage"
+  },
+  "sensitivity_analyses": [
+    "unweighted positive-minus-negative selected-gene score",
+    "leave-one-patient-out matched-metastasis direction",
+    "minimum 50 cells per pseudobulk",
+    "patient-block summaries without cell-level P values"
+  ],
+  "forbidden": [
+    "changing frozen genes or coefficients",
+    "using single-cell results to tune the model",
+    "cell-level pseudoreplication for inferential P values",
+    "claiming experimental mechanism or causal validation",
+    "suppressing failed biological hypotheses"
+  ]
+}

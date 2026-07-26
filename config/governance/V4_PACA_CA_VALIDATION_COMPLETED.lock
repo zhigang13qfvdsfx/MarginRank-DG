@@ -1,0 +1,10 @@
+{
+  "status": "V4_PACA_CA_VALIDATION_CONSUMED_ONCE",
+  "result_gate": "GREEN_INDEPENDENT_VALIDATION",
+  "top_tier_readiness": "AMBER_ADDITIONAL_EVIDENCE_OR_REFRAMING_NEEDED",
+  "model_sha256": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+  "analysis_script_sha256": "4e6a067fd7c55c6648a02cf365cac5b76fca4e36bd3b4aa3e16ccbd95ba9c0ca",
+  "result_sha256": "ded59f7427c3717c84ecaf3cef5329c779ef5a7c00893fb953d6885a94ba7aff",
+  "risk_prediction_performed": true,
+  "validation_set_may_be_reused_for_tuning": false
+}

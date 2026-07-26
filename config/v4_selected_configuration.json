@@ -1,0 +1,13 @@
+{
+  "status": "SELECTED_NOT_YET_FROZEN",
+  "candidate": "anchor_g40_p0__pooled_ridge_a1__aux",
+  "feature": {
+    "kind": "anchor",
+    "n_genes": 40,
+    "n_pairs": 0
+  },
+  "learner": "pooled_ridge",
+  "alpha": 1.0,
+  "include_auxiliary": true,
+  "selection_gate": "PASS"
+}

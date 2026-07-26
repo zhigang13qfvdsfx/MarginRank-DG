@@ -1,0 +1,8 @@
+{
+  "status": "V4_GSE77435_EXTREME_SURVIVAL_CONSUMED_ONCE",
+  "result_gate": "AMBER_OR_RED_EXTREME_PHENOTYPE_RESULT",
+  "model_sha256": "4ae839a9326ffd4fe5e8f6413fc832688b4090bbfb52f9958404b76e28ab0b41",
+  "result_sha256": "b885d9692368321f23635f730a412c4609dc5fa207fee12a2fdddaaad08753f0",
+  "may_be_reused_for_model_tuning": false,
+  "may_be_claimed_as_time_to_event_validation": false
+}

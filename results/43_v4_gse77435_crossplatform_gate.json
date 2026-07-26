@@ -1,0 +1,17 @@
+{
+  "status": "GSE77435_IDENTITY_MAPPING_FAILED_STOP_BEFORE_RISK_SCORING",
+  "overall_gate": "FAIL",
+  "mapping_gate": "FAIL",
+  "mapping_conditions": {
+    "minimum_confident_pairs": false,
+    "primary_secondary_agreement": false,
+    "one_to_one_assignment": true
+  },
+  "n_rnaseq": 24,
+  "n_microarray": 65,
+  "confident_pairs": 6,
+  "primary_secondary_top1_agreement_fraction": 0.2916666666666667,
+  "risk_scores_generated": false,
+  "model_changed": false,
+  "clinical_validation_claimed": false
+}

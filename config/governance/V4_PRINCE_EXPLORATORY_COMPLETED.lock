@@ -1,0 +1,8 @@
+{
+  "status": "V4_PRINCE_EXPLORATORY_CONSUMED_ONCE",
+  "result": "NOT_SUPPORTIVE",
+  "events": 15,
+  "may_be_reused_for_tuning": false,
+  "may_be_claimed_as_primary_validation": false,
+  "result_sha256": "be601bfd2695ee1f4c1a1db459c08a813d58b0ce9761a551d13ba41120387037"
+}
