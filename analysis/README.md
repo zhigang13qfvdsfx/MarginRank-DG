@@ -30,11 +30,18 @@ src/transsurv/      installable scoring code and frozen v4 model
 models/predecessors frozen comparator used by prespecified analyses
 ```
 
-Install the package and analysis dependencies before running:
+## Installation
+
+For scoring, install from the public GitHub archive using the [main README](../README.md#install-from-github).
+To run the analysis scripts locally, clone this repository and run the following
+from its root in a Python 3.12 virtual environment:
 
 ```bash
 python -m pip install -e ".[analysis]"
 ```
+
+Analyses expect the prepared cohort inputs described above. The scoring package
+includes the frozen model and can be installed with no cohort files.
 
 The one-time external scripts are preserved for auditability. Do not rerun them
 as a route to model tuning, cutoff selection, recalibration, or endpoint
